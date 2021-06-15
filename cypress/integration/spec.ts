@@ -1,4 +1,4 @@
-describe('My First Test', () => {
+describe('Smoke Tests', () => {
   it('should visit the initial dashboard page', () => {
     cy.visit('/');
     cy.contains('Red Medical Dashboard');
