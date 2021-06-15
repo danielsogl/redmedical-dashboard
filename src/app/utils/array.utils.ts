@@ -18,3 +18,24 @@ export const alternateArrays = <T, K>(a: T[], b: K[]): (T | K)[] => {
   alternatedArray.push(...a.slice(l), ...b.slice(l));
   return alternatedArray;
 };
+
+/**
+ * Takes two arrays and returns them alternated into one
+ *
+ * @example
+ * ```ts
+ * cutToSameLength([1, 2, 3], [1, 2, 3, 4]);
+ * // output
+ * [1, 2, 3] // [1, 2, 3]
+ * ```
+ */
+export const cutToSameLength = <T, K>(a: T[], b: K[]) => {
+  const lengthA = a.length;
+  const lengthB = b.length;
+  if (lengthA > lengthB) {
+    return [a.splice(0, lengthB), b];
+  } else if (lengthB > lengthA) {
+    return [a, b.splice(0, lengthA)];
+  }
+  return [a, b];
+};

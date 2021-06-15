@@ -9,7 +9,7 @@ import { WeatherService } from 'src/app/services/weather/weather.service';
 import { WidgetService } from 'src/app/services/widget/widget.service';
 import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
 import { WeatherContentComponent } from 'src/app/shared/components/weather-content/weather-content.component';
-import { alternateArrays } from 'src/app/utils/array.utils';
+import { alternateArrays, cutToSameLength } from 'src/app/utils/array.utils';
 
 @Component({
   selector: 'app-dashboard',
@@ -61,6 +61,8 @@ export class DashboardComponent implements OnInit {
     // fetch stack overflow data
     const stackData = this.loadStackOverflowData('weather');
     const alternatedData = forkJoin([stackData, weatherData]).pipe(
+      map((forkedResult) => cutToSameLength(forkedResult[0], forkedResult[1])),
+      // @ts-expect-error
       map((forkedResult) => alternateArrays(forkedResult[0], forkedResult[1]))
     );
     return alternatedData;
