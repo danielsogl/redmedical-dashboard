@@ -22,7 +22,6 @@ describe('WidgetService', () => {
       .mapDataToWidget(WeatherContentComponent, data)
       .toPromise();
     expect(result).toHaveLength(3);
-    console.log(result[0].component.name);
 
     expect(result[0].component.name).toEqual('WeatherContentComponent');
     expect(result[0].data).toEqual({ value: 'foo' });

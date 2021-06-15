@@ -1,3 +1,5 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createHttpFactory,
   HttpMethod,
@@ -8,7 +10,10 @@ import { StackOverflowService } from './stack-overflow.service';
 
 describe('HttpClient testing', () => {
   let spectator: SpectatorHttp<StackOverflowService>;
-  const createHttp = createHttpFactory(StackOverflowService);
+  const createHttp = createHttpFactory({
+    service: StackOverflowService,
+    imports: [NoopAnimationsModule, MatSnackBarModule],
+  });
 
   beforeEach(() => (spectator = createHttp()));
 
@@ -72,5 +77,23 @@ describe('HttpClient testing', () => {
         },
       ],
     });
+  });
+
+  it('should handle errors', (done) => {
+    const status = 500;
+    const statusText = 'Server error';
+    const errorEvent = new ErrorEvent('API error');
+
+    spectator.service.searchByKeyword('foo').subscribe(
+      () => {},
+      () => {},
+      () => done()
+    );
+
+    const request = spectator.expectOne(
+      'https://api.stackexchange.com/2.2/search?pagesize=20&order=desc&sort=activity&site=stackoverflow&intitle=foo',
+      HttpMethod.GET
+    );
+    request.error(errorEvent, { status, statusText });
   });
 });
