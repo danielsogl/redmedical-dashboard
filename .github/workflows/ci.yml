@@ -1,48 +1,49 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [14.x]
     steps:
-        
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Run unit tests
-      run: npm test -- --ci --coverage
-      
-    - name: Run e2e tests
-      uses: cypress-io/github-action@v2
-      with:
-        start: npm run ng run redmedical-dashboard:cypress-run
-        wait-on: 'http://localhost:4200'
+      - name: Run unit tests
+        run: npm test -- --ci --coverage
 
-    - name: Build
-      run: npm run build
-      
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Run e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run ng run redmedical-dashboard:cypress-run
+          wait-on: "http://localhost:4200"
+
+      - name: Build
+        run: npm run build -- --base-href /redmedical-dashboard/
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: dist/redmedical-dashboard
