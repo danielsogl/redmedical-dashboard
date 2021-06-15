@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WidgetItem } from 'src/app/models/widget.model';
 import { WidgetBaseDirective } from '../widget-base/widget-base.directive';
 
 @Component({
@@ -6,4 +7,6 @@ import { WidgetBaseDirective } from '../widget-base/widget-base.directive';
   templateUrl: './widget.component.html',
   styleUrls: ['./widget.component.scss'],
 })
-export class WidgetComponent extends WidgetBaseDirective {}
+export class WidgetComponent<T, K> extends WidgetBaseDirective {
+  @Input() items: WidgetItem<T, K>[] = [];
+}
