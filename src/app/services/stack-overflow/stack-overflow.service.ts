@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { StackOverflowSearchResult } from 'src/models/stack-overflow.model';
+import { StackOverflowSearchResult } from 'src/app/models/stack-overflow.model';
 
 @Injectable({
   providedIn: 'root',
