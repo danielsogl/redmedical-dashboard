@@ -13,7 +13,7 @@ describe('My First Test', () => {
     });
 
     it('should render no data text', () => {
-      cy.intercept('https://api.stackexchange.com/2.2/search', {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
         body: {
           has_more: true,
           quota_max: 10000,
@@ -37,7 +37,7 @@ describe('My First Test', () => {
     });
 
     it('should render no data text', () => {
-      cy.intercept('https://api.stackexchange.com/2.2/search', {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
         body: {
           has_more: true,
           quota_max: 10000,
@@ -84,7 +84,7 @@ describe('My First Test', () => {
       cy.intercept('assets/data/weather.json', {
         body: [],
       }).as('weatherData');
-      cy.intercept('https://api.stackexchange.com/2.2/search', {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
         body: {
           has_more: true,
           quota_max: 10000,
