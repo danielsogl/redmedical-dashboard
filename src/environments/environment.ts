@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  stackOverflowEndpoint: 'assets/data/stack-overflow.json',
+  stackOverflowEndpoint: 'https://api.stackexchange.com/2.2',
   weatherEndpoint: 'assets/data/weather.json',
 };
 

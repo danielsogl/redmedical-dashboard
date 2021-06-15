@@ -14,6 +14,9 @@ describe('HttpClient testing', () => {
 
   it('should get results by keyword', () => {
     spectator.service.searchByKeyword('foo').subscribe();
-    spectator.expectOne('assets/data/stack-overflow.json', HttpMethod.GET);
+    spectator.expectOne(
+      'https://api.stackexchange.com/2.2/search?pagesize=20&order=desc&sort=activity&site=stackoverflow&intitle=foo',
+      HttpMethod.GET
+    );
   });
 });

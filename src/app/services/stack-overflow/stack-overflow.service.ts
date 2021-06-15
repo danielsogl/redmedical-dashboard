@@ -18,10 +18,9 @@ export class StackOverflowService {
     this.endpoint = environment.stackOverflowEndpoint;
   }
 
-  // TODO: remove dummy endpoint at the end of the demo project
   searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
     // build url
-    const url = `${this.endpoint}${environment.production ? 'search' : ''}`;
+    const url = `${this.endpoint}/search`;
     // build query object
     const queryParams = new HttpParams({
       fromObject: {
@@ -35,7 +34,7 @@ export class StackOverflowService {
 
     return this.http
       .get<StackOverflowSearchResult>(url, {
-        params: environment.production ? queryParams : undefined,
+        params: queryParams,
       })
       .pipe(map((result) => result.items));
   }
