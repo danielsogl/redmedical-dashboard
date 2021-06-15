@@ -35,7 +35,9 @@ jobs:
           wait-on: "http://localhost:4200"
 
       - name: Build
-        run: npm run build -- --base-href /redmedical-dashboard/
+        run: |
+          npm run build -- --base-href /redmedical-dashboard/
+          mv dist/redmedical-dashboard/index.html dist/redmedical-dashboard/404.html
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
