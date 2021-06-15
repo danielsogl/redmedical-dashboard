@@ -10,7 +10,7 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
-  { path: '**', redirectTo: 'dashboard ' },
+  { path: '**', redirectTo: 'dashboard' },
 ];
 
 @NgModule({
