@@ -6,5 +6,4 @@ import { Directive, Input } from '@angular/core';
 })
 export class WidgetBaseDirective {
   @Input() title: string = '';
-  @Input() loading: boolean = false;
 }

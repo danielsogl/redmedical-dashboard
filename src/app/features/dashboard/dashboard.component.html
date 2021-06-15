@@ -1,15 +1,15 @@
 <div class="grid-container">
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile colspan="1" rowspan="1">
-      <app-widget [title]="'Angular'" [loading]="false" [items]="(angularData | async) ?? []"></app-widget>
+      <app-widget [title]="'Angular'" [items]="(angularData | async) ?? []"></app-widget>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="1" rowspan="2">
-      <app-widget [title]="'Weather'" [loading]="false" [items]="(weatherData | async) ?? []"></app-widget>
+      <app-widget [title]="'Weather'" [items]="(weatherData | async) ?? []"></app-widget>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="1" rowspan="1">
-      <app-widget [title]="'TypeScript'" [loading]="false" [items]="(typeScriptData | async) ?? []"></app-widget>
+      <app-widget [title]="'TypeScript'" [items]="(typeScriptData | async) ?? []"></app-widget>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

@@ -45,7 +45,6 @@ describe('WidgetComponent', () => {
       (spectator = createComponent({
         props: {
           title: 'Foo',
-          loading: false,
           items: [new WidgetItem(WeatherContentComponent, mockWeatherData)],
         },
       }))
@@ -63,5 +62,11 @@ describe('WidgetComponent', () => {
 
   it('should render widget content items', () => {
     expect(spectator.queryAll(WidgetContentItemComponent)).toHaveLength(1);
+  });
+
+  it('should handle empty items', () => {
+    spectator.component.items = [];
+    spectator.detectChanges();
+    expect(spectator.query('No Data Available')).toBeDefined();
   });
 });
