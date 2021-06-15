@@ -5,7 +5,7 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { WidgetItem } from 'src/app/models/widget.model';
+import { WidgetContent, WidgetItem } from 'src/app/models/widget.model';
 
 import { WidgetContentDirective } from './widget-content.directive';
 
@@ -15,7 +15,7 @@ import { WidgetContentDirective } from './widget-content.directive';
   styleUrls: ['./widget-content-item.component.scss'],
 })
 export class WidgetContentItemComponent<T, K> implements AfterContentInit {
-  @Input() item!: WidgetItem<T, K>;
+  @Input() item!: WidgetItem<WidgetContent<K>, K>;
 
   @ViewChild(WidgetContentDirective, { static: true })
   contentHost!: WidgetContentDirective;
@@ -28,18 +28,17 @@ export class WidgetContentItemComponent<T, K> implements AfterContentInit {
 
   private loadComponent() {
     // create component by given type
-    const componentFactory = this.cfr.resolveComponentFactory<T>(
+    const componentFactory = this.cfr.resolveComponentFactory(
       this.item.component
     );
 
     // assign template container the resolved component
     const viewContainerRef = this.contentHost.viewContainerRef;
     viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent<T>(componentFactory);
+    const componentRef = viewContainerRef.createComponent(componentFactory);
 
     // assign data to component
     // TODO: add generic content interface
-    // @ts-expect-error
     componentRef.instance.data = this.item.data;
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { WidgetItem } from 'src/app/models/widget.model';
+import { WidgetContent, WidgetItem } from 'src/app/models/widget.model';
 import { WidgetBaseDirective } from '../widget-base/widget-base.directive';
 
 @Component({
@@ -8,5 +8,5 @@ import { WidgetBaseDirective } from '../widget-base/widget-base.directive';
   styleUrls: ['./widget.component.scss'],
 })
 export class WidgetComponent<T, K> extends WidgetBaseDirective {
-  @Input() items: WidgetItem<T, K>[] = [];
+  @Input() items: WidgetItem<WidgetContent<K>, K>[] = [];
 }

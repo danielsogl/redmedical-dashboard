@@ -9,3 +9,7 @@ export class WidgetItem<T, K> {
     this.data = data;
   }
 }
+
+export interface WidgetContent<T> {
+  data: T;
+}
