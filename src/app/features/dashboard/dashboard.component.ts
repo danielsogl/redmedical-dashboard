@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.angularData = this.loadStackOverflowData('angular');
     this.typeScriptData = this.loadStackOverflowData('typescript');
-    this.loadWeatherData();
+    this.weatherData = this.loadWeatherData();
   }
 
   private loadStackOverflowData(keyword: string) {
