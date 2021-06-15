@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-weather-content',
   templateUrl: './weather-content.component.html',
-  styleUrls: ['./weather-content.component.scss']
+  styleUrls: ['./weather-content.component.scss'],
 })
-export class WeatherContentComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class WeatherContentComponent {}

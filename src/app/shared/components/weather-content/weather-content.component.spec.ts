@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatListModule } from '@angular/material/list';
+import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 
 import { WeatherContentComponent } from './weather-content.component';
 
 describe('WeatherContentComponent', () => {
-  let component: WeatherContentComponent;
-  let fixture: ComponentFixture<WeatherContentComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ WeatherContentComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<WeatherContentComponent>;
+  const createComponent = createComponentFactory({
+    component: WeatherContentComponent,
+    imports: [MatListModule],
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherContentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render', () => {
+    expect(spectator.fixture).toBeDefined();
   });
 });

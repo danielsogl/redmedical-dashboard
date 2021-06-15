@@ -5,6 +5,8 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content class="widget-card-content">
-    <div>Content</div>
+    <mat-list role="list">
+      <app-widget-content-item *ngFor="let item of items" [item]="item"></app-widget-content-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>

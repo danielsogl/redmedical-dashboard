@@ -1,13 +1,17 @@
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 
+import { WidgetContentItemComponent } from '../widget-content-item/widget-content-item.component';
+import { WidgetContentDirective } from '../widget-content-item/widget-content.directive';
 import { WidgetComponent } from './widget.component';
 
-describe('WidgetComponent', () => {
-  let spectator: Spectator<WidgetComponent>;
+xdescribe('WidgetComponent', () => {
+  let spectator: Spectator<WidgetComponent<any, any>>;
   const createComponent = createComponentFactory({
     component: WidgetComponent,
-    imports: [MatCardModule],
+    declarations: [WidgetContentItemComponent, WidgetContentDirective],
+    imports: [MatCardModule, MatListModule],
   });
 
   beforeEach(
@@ -16,6 +20,7 @@ describe('WidgetComponent', () => {
         props: {
           title: 'Foo',
           loading: false,
+          items: [],
         },
       }))
   );
