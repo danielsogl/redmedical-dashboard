@@ -1,21 +1,72 @@
+import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
-import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
+import {
+  createComponentFactory,
+  mockProvider,
+  Spectator,
+  SpyObject,
+} from '@ngneat/spectator/jest';
+import { forkJoin, of } from 'rxjs';
+import { StackOverflowService } from 'src/app/services/stack-overflow/stack-overflow.service';
+import { WeatherService } from 'src/app/services/weather/weather.service';
+import { WidgetService } from 'src/app/services/widget/widget.service';
 import { WidgetComponent } from 'src/app/shared/components/widget/widget.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DashboardComponent } from './dashboard.component';
 
+const stackOverflowServiceMock = {
+  searchByKeyword: () => of([]),
+};
+
+const weatherServiceMock = {
+  weatherData: () => of([]),
+};
+
 describe('DashboardComponent', () => {
   let spectator: Spectator<DashboardComponent>;
+  let stackOverflowService: SpyObject<StackOverflowService>;
+  let weatherService: SpyObject<WeatherService>;
+  let widgetService: SpyObject<WidgetService>;
+
   const createComponent = createComponentFactory({
     component: DashboardComponent,
-    imports: [SharedModule, MatGridListModule],
+    imports: [SharedModule, MatGridListModule, HttpClientModule],
+    providers: [
+      mockProvider(StackOverflowService, stackOverflowServiceMock),
+      mockProvider(WeatherService, weatherServiceMock),
+    ],
   });
 
-  beforeEach(() => (spectator = createComponent()));
+  beforeEach(() => {
+    spectator = createComponent();
+    stackOverflowService = spectator.inject(StackOverflowService);
+    weatherService = spectator.inject(WeatherService);
+    widgetService = spectator.inject(WidgetService);
+  });
 
   it('should render', () => {
     expect(spectator.fixture).toBeDefined();
+  });
+
+  it('should map backend data to dashboard widgets', (done) => {
+    spectator.component.ngOnInit();
+    forkJoin([
+      spectator.component.angularData,
+      spectator.component.typeScriptData,
+      spectator.component.weatherData,
+    ]).subscribe((result) => {
+      const angularData = result[0];
+      const typeScriptData = result[1];
+      const weatherData = result[2];
+
+      const widgets = spectator.queryAll(WidgetComponent);
+      expect(widgets[0].items).toEqual(angularData);
+      expect(widgets[1].items).toEqual(weatherData);
+      expect(widgets[2].items).toEqual(typeScriptData);
+
+      done();
+    });
   });
 
   it('should render dashboard widgets', () => {

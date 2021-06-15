@@ -17,7 +17,7 @@ export interface StackOverflowItem {
   last_activity_date: number;
   creation_date: number;
   question_id: number;
-  content_license: ContentLicense;
+  content_license: string;
   link: string;
   title: string;
   last_edit_date?: number;
@@ -26,21 +26,12 @@ export interface StackOverflowItem {
   bounty_closes_date?: number;
 }
 
-export enum ContentLicense {
-  CcBySa30 = 'CC BY-SA 3.0',
-  CcBySa40 = 'CC BY-SA 4.0',
-}
-
 export interface StackOverflowOwner {
   reputation: number;
   user_id: number;
-  user_type: UserType;
+  user_type: string;
   accept_rate?: number;
   profile_image: string;
   display_name: string;
   link: string;
-}
-
-export enum UserType {
-  Registered = 'registered',
 }
