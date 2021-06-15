@@ -1,9 +1,11 @@
 {
   "integrationFolder": "cypress/integration",
   "supportFile": "cypress/support/index.ts",
-  "videosFolder": false,
-  "screenshotsFolder": false,
-  "pluginsFile": false,
+  "videosFolder": "cypress/videos",
+  "screenshotsFolder": "cypress/screenshots",
+  "pluginsFile": "cypress/plugins/index.js",
   "fixturesFolder": "cypress/fixtures",
-  "baseUrl": "http://localhost:4200"
+  "baseUrl": "http://localhost:4200",
+  "screenshotOnRunFailure": false,
+  "videoCompression": false
 }
