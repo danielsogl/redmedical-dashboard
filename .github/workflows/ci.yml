@@ -30,8 +30,13 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run the tests
+    - name: Run unit tests
       run: npm test -- --ci --coverage
+      
+    - name: Run e2e tests
+      uses: cypress-io/github-action@v2
+      with:
+        start: npm run ng run redmedical-dashboard:cypress-run
 
     - name: Build
       run: npm run build
