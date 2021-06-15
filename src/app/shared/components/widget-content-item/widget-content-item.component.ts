@@ -38,7 +38,6 @@ export class WidgetContentItemComponent<T, K> implements AfterContentInit {
     const componentRef = viewContainerRef.createComponent(componentFactory);
 
     // assign data to component
-    // TODO: add generic content interface
     componentRef.instance.data = this.item.data;
   }
 }
