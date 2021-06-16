@@ -18,12 +18,15 @@ describe('My First Test', () => {
   });
 
   describe('test angular widget', () => {
-    it('should render widget container', () => {
+    it('should render widget header', () => {
       cy.get('mat-card').eq(0).children('.mat-card-header').contains('Angular');
     });
 
     it('should render widget items', () => {
-      cy.get('.mat-list-item', { timeout: 10000 }).eq(0);
+      cy.get('mat-card')
+        .eq(0)
+        .find('.mat-list-item', { timeout: 2000 })
+        .should('have.length', 30);
     });
 
     it('should render no data text', () => {
@@ -51,7 +54,7 @@ describe('My First Test', () => {
   });
 
   describe('test typescript widget', () => {
-    it('should render widget container', () => {
+    it('should render widget header', () => {
       cy.get('mat-card')
         .eq(2)
         .children('.mat-card-header')
@@ -59,7 +62,10 @@ describe('My First Test', () => {
     });
 
     it('should render widget items', () => {
-      cy.get('.mat-list-item', { timeout: 10000 }).eq(2);
+      cy.get('mat-card')
+        .eq(2)
+        .find('.mat-list-item', { timeout: 2000 })
+        .should('have.length', 30);
     });
 
     it('should render no data text', () => {
@@ -87,12 +93,15 @@ describe('My First Test', () => {
   });
 
   describe('test weather widget', () => {
-    it('should render widget container', () => {
+    it('should render widget header', () => {
       cy.get('mat-card').eq(1).children('.mat-card-header').contains('Weather');
     });
 
     it('should render widget items', () => {
-      cy.get('.mat-list-item', { timeout: 10000 }).eq(1);
+      cy.get('mat-card')
+        .eq(1)
+        .find('.mat-list-item', { timeout: 2000 })
+        .should('have.length', 10);
     });
 
     it('should render no data text', () => {
