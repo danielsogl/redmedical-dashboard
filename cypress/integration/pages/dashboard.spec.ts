@@ -1,4 +1,4 @@
-describe('My First Test', () => {
+describe('Dashboard Page', () => {
   beforeEach(() => {
     // mock stack overflow data
     cy.intercept('https://api.stackexchange.com/2.2/*', {
@@ -100,8 +100,12 @@ describe('My First Test', () => {
     it('should render widget items', () => {
       cy.get('mat-card')
         .eq(1)
-        .find('.mat-list-item', { timeout: 2000 })
-        .should('have.length', 10);
+        .find('app-stack-overflow-content', { timeout: 2000 })
+        .should('have.length', 5);
+      cy.get('mat-card')
+        .eq(1)
+        .find('app-weather-content', { timeout: 2000 })
+        .should('have.length', 5);
     });
 
     it('should render no data text', () => {
