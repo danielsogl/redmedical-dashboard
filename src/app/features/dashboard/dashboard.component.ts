@@ -9,7 +9,11 @@ import { WeatherService } from 'src/app/services/weather/weather.service';
 import { WidgetService } from 'src/app/services/widget/widget.service';
 import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
 import { WeatherContentComponent } from 'src/app/shared/components/weather-content/weather-content.component';
-import { alternateArrays, cutToSameLength } from 'src/app/utils/array.utils';
+import {
+  alternateArrays,
+  cutToSameLength,
+  shuffleArray,
+} from 'src/app/utils/array.utils';
 
 @Component({
   selector: 'app-dashboard',
@@ -77,6 +81,11 @@ export class DashboardComponent implements OnInit {
       // cut result to 5 items per result
       map((forkedResult) => {
         return [forkedResult[0].splice(0, 5), forkedResult[1].splice(0, 5)];
+      }),
+      // shuffle weather data
+      map((forkedResult) => {
+        // @ts-expect-error: types will not be resolved correctly by the IDE
+        return [forkedResult[0], shuffleArray(forkedResult[1])];
       }),
       // @ts-expect-error: types will not be resolved correctly by the IDE
       // alternate both arrays into one array

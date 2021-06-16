@@ -1,4 +1,4 @@
-import { alternateArrays, cutToSameLength } from './array.utils';
+import { alternateArrays, cutToSameLength, shuffleArray } from './array.utils';
 
 describe('Array Utils', () => {
   describe('test alternateArrays', () => {
@@ -39,7 +39,7 @@ describe('Array Utils', () => {
   });
 
   describe('test cutToSameLength', () => {
-    it('should cut arrays to same length', () => {
+    it('should cut arrays with different lengths based on the largest', () => {
       expect(cutToSameLength([1, 2, 3], [1, 2])).toEqual([
         [1, 2],
         [1, 2],
@@ -49,11 +49,19 @@ describe('Array Utils', () => {
         [1, 2],
         [1, 2],
       ]);
+    });
 
+    it('should cut arrays with same length', () => {
       expect(cutToSameLength([1, 2], [1, 2])).toEqual([
         [1, 2],
         [1, 2],
       ]);
+    });
+  });
+
+  describe('test shuffleArray', () => {
+    it('should shuffle array', () => {
+      expect(shuffleArray([1, 2, 3])).not.toEqual([[1, 2, 3]]);
     });
   });
 });
