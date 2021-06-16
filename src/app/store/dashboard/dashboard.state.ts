@@ -6,16 +6,10 @@ import { WeatherContentComponent } from 'src/app/shared/components/weather-conte
 
 export interface DashboardStateModel {
   angularWidget: {
-    data: WidgetItem<
-      StackOverflowContentComponent | WeatherContentComponent,
-      StackOverflowItem | Weather
-    >[];
+    data: WidgetItem<StackOverflowContentComponent, StackOverflowItem>[];
   };
   typeScriptWidget: {
-    data: WidgetItem<
-      StackOverflowContentComponent | WeatherContentComponent,
-      StackOverflowItem | Weather
-    >[];
+    data: WidgetItem<StackOverflowContentComponent, StackOverflowItem>[];
   };
   weatherWidget: {
     data: WidgetItem<

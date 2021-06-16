@@ -1,8 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import {
   StackOverflowItem,
   StackOverflowSearchResult,
@@ -22,8 +21,8 @@ export class StackOverflowService
 {
   private readonly endpoint: string;
 
-  constructor(private http: HttpClient, snackbar: MatSnackBar) {
-    super(snackbar);
+  constructor(private http: HttpClient) {
+    super();
     this.endpoint = environment.stackOverflowEndpoint;
   }
 
@@ -35,7 +34,6 @@ export class StackOverflowService
   private searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
     // build url
     const url = `${this.endpoint}/search`;
-    // const url = 'assets/data/stack-overflow.json';
     // build query object
     const queryParams = new HttpParams({
       fromObject: {
