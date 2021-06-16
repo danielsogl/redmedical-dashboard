@@ -25,6 +25,15 @@ describe('My First Test', () => {
       cy.wait('@fetchAngularData');
       cy.get('.mat-card-content').eq(0).contains('No Data Available');
     });
+
+    it('should handle api errors', () => {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
+        forceNetworkError: true,
+      }).as('fetchAngularData');
+      cy.visit('/dashboard');
+      cy.wait('@fetchAngularData');
+      cy.get('.mat-card-content').eq(0).contains('No Data Available');
+    });
   });
 
   describe('test typescript widget', () => {
@@ -47,6 +56,15 @@ describe('My First Test', () => {
       }).as('fetchTypeScript');
       cy.visit('/dashboard');
       cy.wait('@fetchTypeScript');
+      cy.get('.mat-card-content').eq(2).contains('No Data Available');
+    });
+
+    it('should handle api errors', () => {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
+        forceNetworkError: true,
+      }).as('fetchAngularData');
+      cy.visit('/dashboard');
+      cy.wait('@fetchAngularData');
       cy.get('.mat-card-content').eq(2).contains('No Data Available');
     });
   });
