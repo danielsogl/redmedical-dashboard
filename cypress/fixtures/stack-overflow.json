@@ -1,0 +1,788 @@
+{
+  "items": [
+    {
+      "tags": [
+        "javascript",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 11190640,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/sc45G.png?s=128&g=1",
+        "display_name": "marry",
+        "link": "https://stackoverflow.com/users/11190640/marry"
+      },
+      "is_answered": false,
+      "view_count": 14,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623754359,
+      "creation_date": 1623754359,
+      "question_id": 67984894,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67984894/typescript-move-object-horizontally",
+      "title": "Typescript move object horizontally"
+    },
+    {
+      "tags": [
+        "python",
+        "angular",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 13584748,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/377d30fb479c1ad884b20fac412fa4dc?s=128&d=identicon&r=PG&f=1",
+        "display_name": "alby5062",
+        "link": "https://stackoverflow.com/users/13584748/alby5062"
+      },
+      "is_answered": false,
+      "view_count": 16,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1623754233,
+      "creation_date": 1623753719,
+      "question_id": 67984740,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67984740/how-can-i-beautify-a-string-into-python-using-typescript-angular",
+      "title": "How can i beautify a string into Python using Typescript Angular?"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript",
+        "configuration"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 7245490,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/14af60c3ef54429d007f0ba015677784?s=128&d=identicon&r=PG&f=1",
+        "display_name": "CruiseM",
+        "link": "https://stackoverflow.com/users/7245490/cruisem"
+      },
+      "is_answered": false,
+      "view_count": 5,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623752865,
+      "creation_date": 1623752865,
+      "question_id": 67984524,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67984524/typescript-error-code-105-error-message-failed-loading-configuration-file",
+      "title": "TYPESCRIPT /// Error code: 105 :Error message: failed loading configuration file JSFILES/configuration.js"
+    },
+    {
+      "tags": [
+        "palantir-foundry"
+      ],
+      "owner": {
+        "reputation": 11,
+        "user_id": 16222060,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/be93326139d9a5411e03c3814a79c712?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Sensenmann69",
+        "link": "https://stackoverflow.com/users/16222060/sensenmann69"
+      },
+      "is_answered": false,
+      "view_count": 11,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623750388,
+      "creation_date": 1623750388,
+      "question_id": 67983894,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67983894/typescript-return-only-first-value-of-an-objectset",
+      "title": "TypeScript: return only first value of an ObjectSet"
+    },
+    {
+      "tags": [
+        "javascript",
+        "node.js",
+        "typescript",
+        "express",
+        "typescript-typings"
+      ],
+      "owner": {
+        "reputation": 73,
+        "user_id": 9645338,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/24e8ddfbccb2ab7eaff9551e9756953d?s=128&d=identicon&r=PG",
+        "display_name": "JH-",
+        "link": "https://stackoverflow.com/users/9645338/jh"
+      },
+      "is_answered": false,
+      "view_count": 10,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623749655,
+      "creation_date": 1623749655,
+      "question_id": 67983710,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67983710/typescript-extension-of-request-object-through-declare-global-not-recognized",
+      "title": "Typescript extension of Request object through &quot;declare global&quot; not recognized"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "typescript",
+        "esri"
+      ],
+      "owner": {
+        "reputation": 2212,
+        "user_id": 1288109,
+        "user_type": "registered",
+        "accept_rate": 29,
+        "profile_image": "https://www.gravatar.com/avatar/c6223a208ab21a3a745704c6823aa2c2?s=128&d=identicon&r=PG",
+        "display_name": "Starnuto di topo",
+        "link": "https://stackoverflow.com/users/1288109/starnuto-di-topo"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1623748465,
+      "creation_date": 1623743066,
+      "last_edit_date": 1623748465,
+      "question_id": 67982068,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67982068/esri-maps-with-react-and-typescript",
+      "title": "Esri maps with React and Typescript"
+    },
+    {
+      "tags": [
+        "node.js",
+        "typescript",
+        "docker",
+        "heroku",
+        "npm"
+      ],
+      "owner": {
+        "reputation": 61,
+        "user_id": 11528516,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/cd8b146e87524ecb38cdb97bfea50969?s=128&d=identicon&r=PG",
+        "display_name": "DBencz",
+        "link": "https://stackoverflow.com/users/11528516/dbencz"
+      },
+      "is_answered": false,
+      "view_count": 17,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623747349,
+      "creation_date": 1623705181,
+      "last_edit_date": 1623747349,
+      "question_id": 67977277,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67977277/deploy-typescript-node-container-to-heroku",
+      "title": "Deploy typescript node container to heroku"
+    },
+    {
+      "tags": [
+        "typescript",
+        "redux",
+        "typescript-typings"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12952327,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mCH2mGzsDdXxc-_58afWKTDJCn8A9otquLxvHEU5g=k-s128",
+        "display_name": "Chunghee Park",
+        "link": "https://stackoverflow.com/users/12952327/chunghee-park"
+      },
+      "is_answered": false,
+      "view_count": 25,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623746606,
+      "creation_date": 1623746221,
+      "last_edit_date": 1623746606,
+      "question_id": 67982824,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67982824/typescript-infer-passed-generic-parameter",
+      "title": "Typescript infer passed generic parameter"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript",
+        "http",
+        "testing",
+        "jestjs"
+      ],
+      "owner": {
+        "reputation": 125,
+        "user_id": 13476754,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/849b64941fb1e613c1257fc1cf8af85b?s=128&d=identicon&r=PG&f=1",
+        "display_name": "flowermia",
+        "link": "https://stackoverflow.com/users/13476754/flowermia"
+      },
+      "is_answered": false,
+      "view_count": 8,
+      "answer_count": 0,
+      "score": -1,
+      "last_activity_date": 1623746471,
+      "creation_date": 1623746471,
+      "question_id": 67982886,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67982886/typescript-jest-supertest-gives-process-exit-error",
+      "title": "Typescript Jest/SuperTest gives process.exit error"
+    },
+    {
+      "tags": [
+        "react-native",
+        "react-redux",
+        "i18next",
+        "react-i18next"
+      ],
+      "owner": {
+        "reputation": 3553,
+        "user_id": 1928380,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/487352f7cab9fa5b1a52f00d318251a8?s=128&d=identicon&r=PG",
+        "display_name": "Jeremy Belolo",
+        "link": "https://stackoverflow.com/users/1928380/jeremy-belolo"
+      },
+      "is_answered": false,
+      "view_count": 58,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1623745590,
+      "creation_date": 1622107829,
+      "last_edit_date": 1622110317,
+      "question_id": 67719407,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67719407/react-native-i18next-with-react-navigation-and-typescript",
+      "title": "React Native - I18Next with react-navigation and typescript"
+    },
+    {
+      "tags": [
+        "typescript",
+        "dom",
+        "svelte",
+        "htmlelements"
+      ],
+      "owner": {
+        "reputation": 53052,
+        "user_id": 47633,
+        "user_type": "registered",
+        "accept_rate": 61,
+        "profile_image": "https://www.gravatar.com/avatar/b072fc2897196b3bafcd337bc9c91e2d?s=128&d=identicon&r=PG",
+        "display_name": "opensas",
+        "link": "https://stackoverflow.com/users/47633/opensas"
+      },
+      "is_answered": false,
+      "view_count": 9,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623745202,
+      "creation_date": 1623745202,
+      "question_id": 67982584,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67982584/adding-types-to-htmlelements-working-with-svelte-and-typescript",
+      "title": "Adding types to HTMLElements working with Svelte and TypeScript"
+    },
+    {
+      "tags": [
+        "linux",
+        "ubuntu"
+      ],
+      "owner": {
+        "reputation": 63,
+        "user_id": 10312651,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1737600253004713/picture?type=large",
+        "display_name": "Phi Quang Phuoc",
+        "link": "https://stackoverflow.com/users/10312651/phi-quang-phuoc"
+      },
+      "is_answered": false,
+      "view_count": 8,
+      "answer_count": 0,
+      "score": -2,
+      "last_activity_date": 1623744497,
+      "creation_date": 1623744497,
+      "question_id": 67982405,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67982405/cat-doesnt-show-the-content-of-typescript-file-generated-by-script",
+      "title": "cat doesn&#39;t show the content of typescript file generated by script"
+    },
+    {
+      "tags": [
+        "javascript",
+        "arrays",
+        "typescript",
+        "sorting",
+        "lodash"
+      ],
+      "owner": {
+        "reputation": 65,
+        "user_id": 8513736,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1398885690180639/picture?type=large",
+        "display_name": "Bhushan Patil",
+        "link": "https://stackoverflow.com/users/8513736/bhushan-patil"
+      },
+      "is_answered": true,
+      "view_count": 36,
+      "accepted_answer_id": 67975827,
+      "answer_count": 2,
+      "score": 1,
+      "last_activity_date": 1623742073,
+      "creation_date": 1623696918,
+      "question_id": 67975755,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67975755/sort-an-array-using-another-array-in-strictly-same-order-typescript",
+      "title": "Sort an array using another array in strictly same order typescript"
+    },
+    {
+      "tags": [
+        "javascript",
+        "reactjs",
+        "typescript",
+        "ecmascript-6",
+        "redux-toolkit"
+      ],
+      "owner": {
+        "reputation": 303,
+        "user_id": 9624268,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/kDK19.jpg?s=128&g=1",
+        "display_name": "Abhishek Konnur",
+        "link": "https://stackoverflow.com/users/9624268/abhishek-konnur"
+      },
+      "is_answered": false,
+      "view_count": 22,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623741368,
+      "creation_date": 1623676032,
+      "last_edit_date": 1623741368,
+      "question_id": 67970798,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67970798/use-return-of-one-createselector-into-another-createselector-in-react-typescri",
+      "title": "Use return of one createSelector into another createSelector in react + typescript web app"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 18999,
+        "user_id": 599184,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://i.stack.imgur.com/tjsXC.jpg?s=128&g=1",
+        "display_name": "Leo Jiang",
+        "link": "https://stackoverflow.com/users/599184/leo-jiang"
+      },
+      "is_answered": false,
+      "view_count": 49,
+      "answer_count": 1,
+      "score": 2,
+      "last_activity_date": 1623741354,
+      "creation_date": 1623729020,
+      "question_id": 67979769,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67979769/typescript-this-condition-will-always-return-false-when-accessing-class-ins",
+      "title": "Typescript: &quot;This condition will always return &#39;false&#39;&quot; when accessing class instance property"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 18999,
+        "user_id": 599184,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://i.stack.imgur.com/tjsXC.jpg?s=128&g=1",
+        "display_name": "Leo Jiang",
+        "link": "https://stackoverflow.com/users/599184/leo-jiang"
+      },
+      "is_answered": false,
+      "view_count": 29,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1623740172,
+      "creation_date": 1623736653,
+      "question_id": 67980758,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67980758/typescript-checking-truthiness-of-variable-doesnt-type-guard-against-undefined",
+      "title": "Typescript: checking truthiness of variable doesn&#39;t type-guard against undefined?"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "typescript",
+        "react-hooks"
+      ],
+      "owner": {
+        "reputation": 11,
+        "user_id": 12362934,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/bf7ebf4d1bde0efa65d0a9a432ec87e9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "samir",
+        "link": "https://stackoverflow.com/users/12362934/samir"
+      },
+      "is_answered": false,
+      "view_count": 12,
+      "closed_date": 1623743465,
+      "answer_count": 0,
+      "score": -2,
+      "last_activity_date": 1623739469,
+      "creation_date": 1623739469,
+      "question_id": 67981234,
+      "link": "https://stackoverflow.com/questions/67981234/how-to-create-custom-pagination-functionality-in-react-typescript-using-hooks",
+      "closed_reason": "Needs more focus",
+      "title": "How to create custom Pagination functionality in react typescript using hooks"
+    },
+    {
+      "tags": [
+        "typescript",
+        "vue.js"
+      ],
+      "owner": {
+        "reputation": 1955,
+        "user_id": 2590119,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://www.gravatar.com/avatar/0f04580a4b076cefb644a580b878eb0a?s=128&d=identicon&r=PG",
+        "display_name": "Caleb Jay",
+        "link": "https://stackoverflow.com/users/2590119/caleb-jay"
+      },
+      "is_answered": false,
+      "view_count": 10,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623738652,
+      "creation_date": 1623738652,
+      "question_id": 67981084,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67981084/having-a-typescript-declaration-file-for-an-untyped-library-while-also-defining",
+      "title": "Having a Typescript declaration file for an untyped library, while also defining custom properties added to Vue by same untyped library"
+    },
+    {
+      "tags": [
+        "json",
+        "reactjs",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 13482697,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhIuB4O3Wi60RyowNc537qfvq1485ZDxOfhYzDGTg=k-s128",
+        "display_name": "Shashank Roy",
+        "link": "https://stackoverflow.com/users/13482697/shashank-roy"
+      },
+      "is_answered": false,
+      "view_count": 15,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623737698,
+      "creation_date": 1623737698,
+      "question_id": 67980929,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67980929/subset-of-columns-of-json-data-in-typescript-react-project",
+      "title": "Subset of columns of JSON Data in TypeScript React project"
+    },
+    {
+      "tags": [
+        "javascript",
+        "node.js",
+        "typescript",
+        "webpack",
+        "babeljs"
+      ],
+      "owner": {
+        "reputation": 87,
+        "user_id": 8044107,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/6c9c05848f56ff90fd2841940e96ba22?s=128&d=identicon&r=PG",
+        "display_name": "bhawanishiv",
+        "link": "https://stackoverflow.com/users/8044107/bhawanishiv"
+      },
+      "is_answered": false,
+      "view_count": 26,
+      "answer_count": 2,
+      "score": 1,
+      "last_activity_date": 1623736958,
+      "creation_date": 1623733234,
+      "question_id": 67980262,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67980262/import-statements-in-nodejs-with-typescript-is-not-resolving-with-absolute-path",
+      "title": "Import statements in Nodejs with Typescript is not resolving with absolute path after compiling"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 4043,
+        "user_id": 2497278,
+        "user_type": "registered",
+        "accept_rate": 56,
+        "profile_image": "https://www.gravatar.com/avatar/3afd098c9c531d5591c5fdc0257da20f?s=128&d=identicon&r=PG",
+        "display_name": "peterc",
+        "link": "https://stackoverflow.com/users/2497278/peterc"
+      },
+      "is_answered": false,
+      "view_count": 17,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1623735653,
+      "creation_date": 1623726772,
+      "question_id": 67979526,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67979526/typescript-is-not-adding-resolved-path-into-custom-angular-library-d-ts-file",
+      "title": "TypeScript is not adding resolved path into Custom Angular library .d.ts file"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 18999,
+        "user_id": 599184,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://i.stack.imgur.com/tjsXC.jpg?s=128&g=1",
+        "display_name": "Leo Jiang",
+        "link": "https://stackoverflow.com/users/599184/leo-jiang"
+      },
+      "is_answered": true,
+      "view_count": 30,
+      "answer_count": 3,
+      "score": 1,
+      "last_activity_date": 1623733397,
+      "creation_date": 1623728075,
+      "question_id": 67979663,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67979663/typescript-keyof-instancetypet-cannot-be-used-to-index-type-error",
+      "title": "Typescript &#39;keyof InstanceType&lt;T&gt;&#39; cannot be used to index type error"
+    },
+    {
+      "tags": [
+        "angular",
+        "ngrx"
+      ],
+      "owner": {
+        "reputation": 1566,
+        "user_id": 1131623,
+        "user_type": "registered",
+        "accept_rate": 38,
+        "profile_image": "https://www.gravatar.com/avatar/30d55c8969c100958f800cd63073b7ff?s=128&d=identicon&r=PG",
+        "display_name": "matthias",
+        "link": "https://stackoverflow.com/users/1131623/matthias"
+      },
+      "is_answered": false,
+      "view_count": 130,
+      "answer_count": 4,
+      "score": 2,
+      "last_activity_date": 1623732790,
+      "creation_date": 1618987172,
+      "last_edit_date": 1623335777,
+      "question_id": 67190482,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67190482/angular-and-async-pipe-typescript-complains-for-null",
+      "title": "angular and async pipe typescript complains for null"
+    },
+    {
+      "tags": [
+        "node.js",
+        "typescript",
+        "botframework",
+        "microsoft-teams"
+      ],
+      "owner": {
+        "reputation": 11,
+        "user_id": 16184077,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GiSrct8M8XsALpJl3lV7yd6fnOC7QrDDOBVlbtcXg=k-s128",
+        "display_name": "Cleyon Kurian",
+        "link": "https://stackoverflow.com/users/16184077/cleyon-kurian"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1623732312,
+      "creation_date": 1623310333,
+      "question_id": 67916650,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67916650/how-to-implement-handoff-to-human-in-microsoft-teams-bot-app-using-teams-too",
+      "title": "How to Implement &quot;Handoff to human &quot; in microsoft teams bot app (using teams toolkit)? Is it possible using typescript?"
+    },
+    {
+      "tags": [
+        "node.js",
+        "typescript",
+        "this"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 10843694,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1815007438608372/picture?type=large",
+        "display_name": "Eder Rog&#233;rio",
+        "link": "https://stackoverflow.com/users/10843694/eder-rog%c3%a9rio"
+      },
+      "is_answered": true,
+      "view_count": 17,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1623729400,
+      "creation_date": 1623728328,
+      "question_id": 67979687,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67979687/this-is-undefined-in-typescript-class",
+      "title": "this is undefined in typescript class"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript",
+        "mongodb",
+        "npm",
+        "environment-variables"
+      ],
+      "owner": {
+        "reputation": 5,
+        "user_id": 14438049,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/tHkEX.jpg?s=128&g=1",
+        "display_name": "Mohammad Rahmani",
+        "link": "https://stackoverflow.com/users/14438049/mohammad-rahmani"
+      },
+      "is_answered": false,
+      "view_count": 25,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623728159,
+      "creation_date": 1623136924,
+      "last_edit_date": 1623728159,
+      "question_id": 67883104,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67883104/typescript-npm-error-undefined-environment-variable-mongodb-conn-string",
+      "title": "TypeScript npm error: undefined environment variable MONGODB_CONN_STRING"
+    },
+    {
+      "tags": [
+        "typescript",
+        "generics",
+        "keyof"
+      ],
+      "owner": {
+        "reputation": 2059,
+        "user_id": 11169941,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/2341214042556921/picture?type=large",
+        "display_name": "Joseph Wang",
+        "link": "https://stackoverflow.com/users/11169941/joseph-wang"
+      },
+      "is_answered": true,
+      "view_count": 863,
+      "accepted_answer_id": 55060654,
+      "answer_count": 2,
+      "score": 2,
+      "last_activity_date": 1623727744,
+      "creation_date": 1552037813,
+      "last_edit_date": 1552038631,
+      "question_id": 55060390,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/55060390/how-can-i-specify-that-typescript-generic-tk-is-number-type",
+      "title": "How can I specify that Typescript generic T[K] is number type?"
+    },
+    {
+      "tags": [
+        "typescript",
+        "visual-studio-code",
+        "protractor"
+      ],
+      "owner": {
+        "reputation": 255,
+        "user_id": 3144092,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://www.gravatar.com/avatar/ee81221bd7b74fcafe2067e110b8363e?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Dileep17",
+        "link": "https://stackoverflow.com/users/3144092/dileep17"
+      },
+      "is_answered": false,
+      "view_count": 181,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1623726036,
+      "creation_date": 1554630942,
+      "question_id": 55557688,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/55557688/protractor-typescript-vscode-debugging",
+      "title": "Protractor typescript VScode debugging"
+    },
+    {
+      "tags": [
+        "vue.js",
+        "webpack",
+        "vue-cli",
+        "webpack-4"
+      ],
+      "owner": {
+        "reputation": 18863,
+        "user_id": 1166285,
+        "user_type": "registered",
+        "accept_rate": 73,
+        "profile_image": "https://www.gravatar.com/avatar/94f966645c82cdaa04ff6669d7739457?s=128&d=identicon&r=PG&f=1",
+        "display_name": "d-_-b",
+        "link": "https://stackoverflow.com/users/1166285/d-b"
+      },
+      "is_answered": false,
+      "view_count": 9,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623721456,
+      "creation_date": 1623719501,
+      "last_edit_date": 1623721456,
+      "question_id": 67978812,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67978812/chain-vue-cli-webpack-after-build-for-a-typescript-file",
+      "title": "Chain vue-cli webpack after build for a typescript file"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 18999,
+        "user_id": 599184,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://i.stack.imgur.com/tjsXC.jpg?s=128&g=1",
+        "display_name": "Leo Jiang",
+        "link": "https://stackoverflow.com/users/599184/leo-jiang"
+      },
+      "is_answered": false,
+      "view_count": 24,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1623721436,
+      "creation_date": 1623721436,
+      "question_id": 67978990,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/67978990/typescript-static-class-properties-that-reference-the-subclasss-properties",
+      "title": "Typescript: static class properties that reference the subclass&#39;s properties?"
+    }
+  ],
+  "has_more": true,
+  "quota_max": 10000,
+  "quota_remaining": 9690
+}
