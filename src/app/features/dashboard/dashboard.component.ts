@@ -74,6 +74,10 @@ export class DashboardComponent implements OnInit {
     const alternatedData = forkJoin([stackData, weatherData]).pipe(
       // cut arrays to the same length based on the shortest array
       map((forkedResult) => cutToSameLength(forkedResult[0], forkedResult[1])),
+      // cut result to 5 items per result
+      map((forkedResult) => {
+        return [forkedResult[0].splice(0, 5), forkedResult[1].splice(0, 5)];
+      }),
       // @ts-expect-error: types will not be resolved correctly by the IDE
       // alternate both arrays into one array
       map((forkedResult) => alternateArrays(forkedResult[0], forkedResult[1]))
