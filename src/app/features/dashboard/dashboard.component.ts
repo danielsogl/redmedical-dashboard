@@ -6,7 +6,6 @@ import { Weather } from 'src/app/models/weather.model';
 import { WidgetItem } from 'src/app/models/widget.model';
 import { StackOverflowService } from 'src/app/services/stack-overflow/stack-overflow.service';
 import { WeatherService } from 'src/app/services/weather/weather.service';
-import { WidgetService } from 'src/app/services/widget/widget.service';
 import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
 import { WeatherContentComponent } from 'src/app/shared/components/weather-content/weather-content.component';
 import {
@@ -36,43 +35,28 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private stackOverflowService: StackOverflowService,
-    private weatherService: WeatherService,
-    private widgetService: WidgetService
+    private weatherService: WeatherService
   ) {}
 
   ngOnInit() {
-    this.angularData = this.loadStackOverflowData('angular2');
-    this.typeScriptData = this.loadStackOverflowData('typescript');
+    this.angularData = this.stackOverflowService.getWidgetItems('angular2');
+    this.typeScriptData =
+      this.stackOverflowService.getWidgetItems('typescript');
     this.weatherData = this.loadWeatherData();
-  }
-
-  /**
-   * Maps StackOverflowItems to WidgetItems based on a given search string
-   */
-  private loadStackOverflowData(keyword: string) {
-    const request = this.stackOverflowService.searchByKeyword(keyword);
-    const mappedData = this.widgetService.mapDataToWidget(
-      StackOverflowContentComponent,
-      request
-    );
-    return mappedData;
   }
 
   /**
    * Merges weather data and StackOverflow weather data items into one array.
    * The array will contain the same amount of both item types
+   *
+   * Note: Normally I would move all of that logic into a Action
    */
   private loadWeatherData() {
-    // weather request
-    const weatherDataRequest = this.weatherService.weatherData();
-    // map weather data
-    const weatherData = this.widgetService.mapDataToWidget(
-      WeatherContentComponent,
-      weatherDataRequest
-    );
+    // get weather data
+    const weatherData = this.weatherService.getWidgetItems();
 
-    // fetch stack overflow data
-    const stackData = this.loadStackOverflowData('weather');
+    // get stack overflow data
+    const stackData = this.stackOverflowService.getWidgetItems('weather');
 
     // combine both arrays
     const alternatedData = forkJoin([stackData, weatherData]).pipe(

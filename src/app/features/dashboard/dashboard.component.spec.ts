@@ -1,5 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createComponentFactory,
   mockProvider,
@@ -9,29 +11,33 @@ import {
 import { forkJoin, of } from 'rxjs';
 import { StackOverflowService } from 'src/app/services/stack-overflow/stack-overflow.service';
 import { WeatherService } from 'src/app/services/weather/weather.service';
-import { WidgetService } from 'src/app/services/widget/widget.service';
 import { WidgetComponent } from 'src/app/shared/components/widget/widget.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DashboardComponent } from './dashboard.component';
 
 const stackOverflowServiceMock = {
-  searchByKeyword: () => of([]),
+  getWidgetItems: () => of([]),
 };
 
 const weatherServiceMock = {
-  weatherData: () => of([]),
+  getWidgetItems: () => of([]),
 };
 
 describe('DashboardComponent', () => {
   let spectator: Spectator<DashboardComponent>;
   let stackOverflowService: SpyObject<StackOverflowService>;
   let weatherService: SpyObject<WeatherService>;
-  let widgetService: SpyObject<WidgetService>;
 
   const createComponent = createComponentFactory({
     component: DashboardComponent,
-    imports: [SharedModule, MatGridListModule, HttpClientModule],
+    imports: [
+      SharedModule,
+      MatGridListModule,
+      NoopAnimationsModule,
+      HttpClientTestingModule,
+      MatSnackBarModule,
+    ],
     providers: [
       mockProvider(StackOverflowService, stackOverflowServiceMock),
       mockProvider(WeatherService, weatherServiceMock),
@@ -42,7 +48,6 @@ describe('DashboardComponent', () => {
     spectator = createComponent();
     stackOverflowService = spectator.inject(StackOverflowService);
     weatherService = spectator.inject(WeatherService);
-    widgetService = spectator.inject(WidgetService);
   });
 
   it('should render', () => {

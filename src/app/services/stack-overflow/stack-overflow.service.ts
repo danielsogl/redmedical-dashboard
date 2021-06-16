@@ -7,13 +7,19 @@ import {
   StackOverflowItem,
   StackOverflowSearchResult,
 } from 'src/app/models/stack-overflow.model';
+import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
 import { environment } from 'src/environments/environment';
+
 import { BaseHttpService } from '../base/base-http.service';
+import { WidgetBaseService } from '../base/widget-base.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StackOverflowService extends BaseHttpService {
+export class StackOverflowService
+  extends BaseHttpService
+  implements WidgetBaseService
+{
   private readonly endpoint: string;
 
   constructor(private http: HttpClient, snackbar: MatSnackBar) {
@@ -26,7 +32,7 @@ export class StackOverflowService extends BaseHttpService {
    *
    * If a error happens a empty array will be returned
    */
-  searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
+  private searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
     // build url
     const url = `${this.endpoint}/search`;
     // build query object
@@ -51,5 +57,14 @@ export class StackOverflowService extends BaseHttpService {
           return [];
         })
       );
+  }
+
+  getWidgetItems(keyword: string) {
+    const request = this.searchByKeyword(keyword);
+    const mappedData = this.mapDataToWidget(
+      StackOverflowContentComponent,
+      request
+    );
+    return mappedData;
   }
 }

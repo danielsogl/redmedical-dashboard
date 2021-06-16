@@ -17,9 +17,30 @@ describe('HttpClient testing', () => {
 
   beforeEach(() => (spectator = createHttp()));
 
-  it('should get results by keyword', () => {
-    spectator.service.weatherData().subscribe();
-    spectator.expectOne('assets/data/weather.json', HttpMethod.GET);
+  it('should create', () => {
+    expect(spectator.service).toBeDefined();
+  });
+
+  it('should get results by keyword', (done) => {
+    spectator.service.getWidgetItems().subscribe((result) => {
+      expect(result).toHaveLength(1);
+      done();
+    });
+    const req = spectator.expectOne('assets/data/weather.json', HttpMethod.GET);
+    req.flush([
+      {
+        Datum: '01.01.2016',
+        Zeit: '00:00',
+        'Temp. A.': 1.6,
+        'Temp. 3': -38.8,
+        'Feuchte A.': 94,
+        Luftdruck: 977,
+        Regen: 0,
+        Wind: 5,
+        Richtung: 150,
+        Helligkeit: 0,
+      },
+    ]);
   });
 
   it('should handle errors', (done) => {
@@ -27,7 +48,7 @@ describe('HttpClient testing', () => {
     const statusText = 'Server error';
     const errorEvent = new ErrorEvent('API error');
 
-    spectator.service.weatherData().subscribe(
+    spectator.service.getWidgetItems().subscribe(
       () => {},
       () => {},
       () => done()
