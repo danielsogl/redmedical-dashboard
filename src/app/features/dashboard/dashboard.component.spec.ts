@@ -49,7 +49,7 @@ describe('DashboardComponent', () => {
     expect(spectator.fixture).toBeDefined();
   });
 
-  it('should map backend data to dashboard widgets', (done) => {
+  it('should request data on ngOnInit', (done) => {
     spectator.component.ngOnInit();
     forkJoin([
       spectator.component.angularData,
@@ -69,26 +69,34 @@ describe('DashboardComponent', () => {
     });
   });
 
-  it('should render dashboard widgets', () => {
-    const widgets = spectator.queryAll(WidgetComponent);
-    expect(widgets).toHaveLength(3);
+  describe('test widgets', () => {
+    let widgets: WidgetComponent<unknown, unknown>[];
+    let tiles: MatGridTile[];
 
-    const tiles = spectator.queryAll(MatGridTile);
-    expect(tiles).toHaveLength(3);
+    beforeEach(() => {
+      widgets = spectator.queryAll(WidgetComponent);
+      tiles = spectator.queryAll(MatGridTile);
+    });
 
-    // Angular widget
-    expect(widgets[0].title).toEqual('Angular');
-    expect(tiles[0].colspan).toEqual(1);
-    expect(tiles[0].rowspan).toEqual(1);
+    it('should render angular widget', () => {
+      // Angular widget
+      expect(widgets[0].title).toEqual('Angular');
+      expect(tiles[0].colspan).toEqual(1);
+      expect(tiles[0].rowspan).toEqual(1);
+    });
 
-    // TypeScript widget
-    expect(widgets[1].title).toEqual('Weather');
-    expect(tiles[1].colspan).toEqual(1);
-    expect(tiles[1].rowspan).toEqual(2);
+    it('should render typescript widget', () => {
+      // Weather widget
+      expect(widgets[2].title).toEqual('TypeScript');
+      expect(tiles[2].colspan).toEqual(1);
+      expect(tiles[2].rowspan).toEqual(1);
+    });
 
-    // Weather widget
-    expect(widgets[2].title).toEqual('TypeScript');
-    expect(tiles[2].colspan).toEqual(1);
-    expect(tiles[2].rowspan).toEqual(1);
+    it('should render weather widget', () => {
+      // TypeScript widget
+      expect(widgets[1].title).toEqual('Weather');
+      expect(tiles[1].colspan).toEqual(1);
+      expect(tiles[1].rowspan).toEqual(2);
+    });
   });
 });

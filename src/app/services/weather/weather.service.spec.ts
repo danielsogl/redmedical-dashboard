@@ -8,8 +8,6 @@ import {
 
 import { WeatherService } from './weather.service';
 
-const errorEvent = new ErrorEvent('API error');
-
 describe('HttpClient testing', () => {
   let spectator: SpectatorHttp<WeatherService>;
   const createHttp = createHttpFactory({

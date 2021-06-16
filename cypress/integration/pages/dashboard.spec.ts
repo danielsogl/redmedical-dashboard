@@ -1,14 +1,18 @@
 describe('My First Test', () => {
   beforeEach(() => {
+    // mock stack overflow data
     cy.intercept('https://api.stackexchange.com/2.2/*', {
       fixture: 'stack-overflow.json',
     }).as('fetchStackData');
 
+    // mock weather data
     cy.intercept('assets/data/weather.json', {
       fixture: 'weather.json',
     }).as('weatherData');
 
     cy.visit('/dashboard');
+
+    // wait until requests finished
     cy.wait('@fetchStackData');
     cy.wait('@weatherData');
   });
@@ -107,6 +111,15 @@ describe('My First Test', () => {
       cy.visit('/dashboard');
       cy.wait('@weatherData');
       cy.wait('@fetchStackWeather');
+      cy.get('.mat-card-content').eq(1).contains('No Data Available');
+    });
+
+    it('should handle api errors', () => {
+      cy.intercept('https://api.stackexchange.com/2.2/*', {
+        forceNetworkError: true,
+      }).as('fetchAngularData');
+      cy.visit('/dashboard');
+      cy.wait('@fetchAngularData');
       cy.get('.mat-card-content').eq(1).contains('No Data Available');
     });
   });
