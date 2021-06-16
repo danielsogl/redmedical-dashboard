@@ -116,6 +116,10 @@ export interface WidgetContent<T> {
 }
 ```
 
+### Error Handling
+
+Just a few notes about error handling. I will mention it on the next chapter but normally I would use a state management library to handle also errors in my services. Because I decided to ditch state management for this small application, the error handling is managed by the services.
+
 ### Things I would add in a more complex application
 
 Normally I use the library [ngxs](https://www.ngxs.io) to handle my application state. For this demo project It would be a complete overkill, so I decided to not include state management.
