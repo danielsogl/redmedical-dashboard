@@ -1,5 +1,3 @@
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createHttpFactory,
   HttpMethod,
@@ -12,7 +10,6 @@ describe('HttpClient testing', () => {
   let spectator: SpectatorHttp<WeatherService>;
   const createHttp = createHttpFactory({
     service: WeatherService,
-    imports: [NoopAnimationsModule, MatSnackBarModule],
   });
 
   beforeEach(() => (spectator = createHttp()));
@@ -21,7 +18,7 @@ describe('HttpClient testing', () => {
     expect(spectator.service).toBeDefined();
   });
 
-  it('should get results by keyword', (done) => {
+  it('should get widget weather items', (done) => {
     spectator.service.getWidgetItems().subscribe((result) => {
       expect(result).toHaveLength(1);
       done();
@@ -41,23 +38,5 @@ describe('HttpClient testing', () => {
         Helligkeit: 0,
       },
     ]);
-  });
-
-  it('should handle errors', (done) => {
-    const status = 500;
-    const statusText = 'Server error';
-    const errorEvent = new ErrorEvent('API error');
-
-    spectator.service.getWidgetItems().subscribe(
-      () => {},
-      () => {},
-      () => done()
-    );
-
-    const request = spectator.expectOne(
-      'assets/data/weather.json',
-      HttpMethod.GET
-    );
-    request.error(errorEvent, { status, statusText });
   });
 });

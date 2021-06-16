@@ -39,12 +39,11 @@
 
 This project demonstrates how to write reusable Angular components using a `ComponentFactory` and multiple generic TypeScript interfaces or classes.
 
-My goal was to focus on the generic component feature of angular instead of writing a lot of state management code using [ngxs](http://ngxs.io) for example.
-
 ### Built With
 
 - [Angular V12](https://angular.io)
 - [Angular Material](https://material.angular.io)
+- [NGXS](https://ngxs.io)
 - [Spectator](https://ngneat.github.io/spectator/)
 - [Jest](https://jestjs.io)
 - [Cypress](https://cypress.io)
@@ -116,15 +115,9 @@ export interface WidgetContent<T> {
 }
 ```
 
-### Error Handling
+### State Managemet
 
-Just a few notes about error handling. I will mention it on the next chapter but normally I would use a state management library to handle also errors in my services. Because I decided to ditch state management for this small application, the error handling is managed by the services.
-
-### Things I would add in a more complex application
-
-Normally I use the library [ngxs](https://www.ngxs.io) to handle my application state. For this demo project It would be a complete overkill, so I decided to not include state management.
-
-I would also add a Docker Setup for local development and production deployment. To simplify that, I used a simple GitHub Pages action to deploy the app.
+The project is using [ngxs](https://ngxs.io) to handle the applications state.
 
 <!-- TESTS -->
 

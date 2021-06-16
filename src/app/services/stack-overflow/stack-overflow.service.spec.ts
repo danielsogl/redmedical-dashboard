@@ -1,5 +1,3 @@
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createHttpFactory,
   HttpMethod,
@@ -12,8 +10,6 @@ describe('HttpClient testing', () => {
   let spectator: SpectatorHttp<StackOverflowService>;
   const createHttp = createHttpFactory({
     service: StackOverflowService,
-    providers: [],
-    imports: [NoopAnimationsModule, MatSnackBarModule],
   });
 
   beforeEach(() => (spectator = createHttp()));
@@ -22,7 +18,7 @@ describe('HttpClient testing', () => {
     expect(spectator.service).toBeDefined();
   });
 
-  it('should get results by keyword', (done) => {
+  it('should get widget items by keyword', (done) => {
     spectator.service.getWidgetItems('foo').subscribe((result) => {
       expect(result).toHaveLength(1);
       done();
@@ -59,23 +55,5 @@ describe('HttpClient testing', () => {
         },
       ],
     });
-  });
-
-  it('should handle errors', (done) => {
-    const status = 500;
-    const statusText = 'Server error';
-    const errorEvent = new ErrorEvent('API error');
-
-    spectator.service.getWidgetItems('foo').subscribe(
-      () => {},
-      () => {},
-      () => done()
-    );
-
-    const request = spectator.expectOne(
-      'https://api.stackexchange.com/2.2/search?pagesize=20&order=desc&sort=activity&site=stackoverflow&intitle=foo',
-      HttpMethod.GET
-    );
-    request.error(errorEvent, { status, statusText });
   });
 });

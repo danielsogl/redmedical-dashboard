@@ -1,8 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import {
   StackOverflowItem,
   StackOverflowSearchResult,
@@ -22,8 +21,8 @@ export class StackOverflowService
 {
   private readonly endpoint: string;
 
-  constructor(private http: HttpClient, snackbar: MatSnackBar) {
-    super(snackbar);
+  constructor(private http: HttpClient) {
+    super();
     this.endpoint = environment.stackOverflowEndpoint;
   }
 
@@ -50,13 +49,7 @@ export class StackOverflowService
       .get<StackOverflowSearchResult>(url, {
         params: queryParams,
       })
-      .pipe(
-        map((result) => result.items),
-        catchError((error: unknown) => {
-          super.handleRequestError(error);
-          return [];
-        })
-      );
+      .pipe(map((result) => result.items));
   }
 
   getWidgetItems(keyword: string) {

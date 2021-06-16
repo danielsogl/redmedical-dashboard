@@ -4,50 +4,106 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createComponentFactory,
-  mockProvider,
   Spectator,
   SpyObject,
 } from '@ngneat/spectator/jest';
-import { forkJoin, of } from 'rxjs';
-import { StackOverflowService } from 'src/app/services/stack-overflow/stack-overflow.service';
-import { WeatherService } from 'src/app/services/weather/weather.service';
+import { Actions, NgxsModule, ofActionDispatched, Store } from '@ngxs/store';
+import { merge } from 'rxjs';
+import { StackOverflowItem } from 'src/app/models/stack-overflow.model';
+import { Weather } from 'src/app/models/weather.model';
+import { WidgetItem } from 'src/app/models/widget.model';
+import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
+import { WeatherContentComponent } from 'src/app/shared/components/weather-content/weather-content.component';
 import { WidgetComponent } from 'src/app/shared/components/widget/widget.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DashboardState } from 'src/app/store/dashboard/dashboard.actions';
+import {
+  DashboardStateModel,
+  LoadAngularData,
+  LoadTypeScriptData,
+  LoadWeatherData,
+} from 'src/app/store/dashboard/dashboard.state';
 
 import { DashboardComponent } from './dashboard.component';
 
-const stackOverflowServiceMock = {
-  getWidgetItems: () => of([]),
+const stackOverflowData: StackOverflowItem = {
+  tags: ['javascript', 'typescript'],
+  owner: {
+    reputation: 1,
+    user_id: 11190640,
+    user_type: 'registered',
+    profile_image: 'https://i.stack.imgur.com/sc45G.png?s=128&g=1',
+    display_name: 'marry',
+    link: 'https://stackoverflow.com/users/11190640/marry',
+  },
+  is_answered: false,
+  view_count: 14,
+  answer_count: 0,
+  score: 0,
+  last_activity_date: 1623754359,
+  creation_date: 1623754359,
+  question_id: 67984894,
+  content_license: 'CC BY-SA 4.0',
+  link: 'https://stackoverflow.com/questions/67984894/typescript-move-object-horizontally',
+  title: 'Typescript move object horizontally',
 };
 
-const weatherServiceMock = {
-  getWidgetItems: () => of([]),
+const weatherData: Weather = {
+  Datum: '01.01.2016',
+  Zeit: '00:00',
+  'Temp. A.': 1.6,
+  'Temp. 3': -38.8,
+  'Feuchte A.': 94,
+  Luftdruck: 977,
+  Regen: 0,
+  Wind: 5,
+  Richtung: 150,
+  Helligkeit: 0,
 };
 
 describe('DashboardComponent', () => {
   let spectator: Spectator<DashboardComponent>;
-  let stackOverflowService: SpyObject<StackOverflowService>;
-  let weatherService: SpyObject<WeatherService>;
+  let actions: SpyObject<Actions>;
+  let store: SpyObject<Store>;
 
   const createComponent = createComponentFactory({
     component: DashboardComponent,
     imports: [
       SharedModule,
+      NgxsModule.forRoot([DashboardState]),
       MatGridListModule,
       NoopAnimationsModule,
       HttpClientTestingModule,
       MatSnackBarModule,
     ],
-    providers: [
-      mockProvider(StackOverflowService, stackOverflowServiceMock),
-      mockProvider(WeatherService, weatherServiceMock),
-    ],
   });
 
   beforeEach(() => {
     spectator = createComponent();
-    stackOverflowService = spectator.inject(StackOverflowService);
-    weatherService = spectator.inject(WeatherService);
+    actions = spectator.inject(Actions);
+    store = spectator.inject(Store);
+
+    store.reset({
+      ...store.snapshot(),
+      dashboard: {
+        angularWidget: {
+          data: [
+            new WidgetItem(StackOverflowContentComponent, stackOverflowData),
+          ],
+        },
+        typeScriptWidget: {
+          data: [
+            new WidgetItem(StackOverflowContentComponent, stackOverflowData),
+          ],
+        },
+        weatherWidget: {
+          data: [
+            new WidgetItem(StackOverflowContentComponent, stackOverflowData),
+            new WidgetItem(WeatherContentComponent, weatherData),
+          ],
+        },
+      } as DashboardStateModel,
+    });
   });
 
   it('should render', () => {
@@ -55,23 +111,17 @@ describe('DashboardComponent', () => {
   });
 
   it('should request data on ngOnInit', (done) => {
-    spectator.component.ngOnInit();
-    forkJoin([
-      spectator.component.angularData,
-      spectator.component.typeScriptData,
-      spectator.component.weatherData,
-    ]).subscribe((result) => {
-      const angularData = result[0];
-      const typeScriptData = result[1];
-      const weatherData = result[2];
+    const angularAction = actions.pipe(ofActionDispatched(LoadAngularData));
+    const typeScriptAction = actions.pipe(
+      ofActionDispatched(LoadTypeScriptData)
+    );
+    const weatherAction = actions.pipe(ofActionDispatched(LoadWeatherData));
 
-      const widgets = spectator.queryAll(WidgetComponent);
-      expect(widgets[0].items).toEqual(angularData);
-      expect(widgets[1].items).toEqual(weatherData);
-      expect(widgets[2].items).toEqual(typeScriptData);
-
+    merge([angularAction, typeScriptAction, weatherAction]).subscribe(() => {
       done();
     });
+
+    spectator.component.ngOnInit();
   });
 
   describe('test widgets', () => {
