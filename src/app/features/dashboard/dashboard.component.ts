@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
 import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { StackOverflowItem } from 'src/app/models/stack-overflow.model';
@@ -8,6 +9,12 @@ import { StackOverflowService } from 'src/app/services/stack-overflow/stack-over
 import { WeatherService } from 'src/app/services/weather/weather.service';
 import { StackOverflowContentComponent } from 'src/app/shared/components/stack-overflow-content/stack-overflow-content.component';
 import { WeatherContentComponent } from 'src/app/shared/components/weather-content/weather-content.component';
+import { DashboardState } from 'src/app/store/dashboard/dashboard.actions';
+import {
+  LoadAngularData,
+  LoadTypeScriptData,
+  LoadWeatherData,
+} from 'src/app/store/dashboard/dashboard.state';
 import {
   alternateArrays,
   cutToSameLength,
@@ -20,13 +27,14 @@ import {
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  angularData!: Observable<
+  @Select(DashboardState.angularData) angularData!: Observable<
     WidgetItem<StackOverflowContentComponent, StackOverflowItem>[]
   >;
-  typeScriptData!: Observable<
+
+  @Select(DashboardState.typeScriptData) typeScriptData!: Observable<
     WidgetItem<StackOverflowContentComponent, StackOverflowItem>[]
   >;
-  weatherData!: Observable<
+  @Select(DashboardState.weatherData) weatherData!: Observable<
     WidgetItem<
       StackOverflowContentComponent | WeatherContentComponent,
       StackOverflowItem | Weather
@@ -34,15 +42,21 @@ export class DashboardComponent implements OnInit {
   >;
 
   constructor(
+    private store: Store,
     private stackOverflowService: StackOverflowService,
     private weatherService: WeatherService
   ) {}
 
   ngOnInit() {
-    this.angularData = this.stackOverflowService.getWidgetItems('angular2');
-    this.typeScriptData =
-      this.stackOverflowService.getWidgetItems('typescript');
-    this.weatherData = this.loadWeatherData();
+    this.store.dispatch([
+      new LoadAngularData(),
+      new LoadTypeScriptData(),
+      new LoadWeatherData(),
+    ]);
+    // this.angularData = this.stackOverflowService.getWidgetItems('angular2');
+    // this.typeScriptData =
+    //   this.stackOverflowService.getWidgetItems('typescript');
+    // this.weatherData = this.loadWeatherData();
   }
 
   /**

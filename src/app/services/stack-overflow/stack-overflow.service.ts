@@ -35,6 +35,7 @@ export class StackOverflowService
   private searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
     // build url
     const url = `${this.endpoint}/search`;
+    // const url = 'assets/data/stack-overflow.json';
     // build query object
     const queryParams = new HttpParams({
       fromObject: {
@@ -50,13 +51,7 @@ export class StackOverflowService
       .get<StackOverflowSearchResult>(url, {
         params: queryParams,
       })
-      .pipe(
-        map((result) => result.items),
-        catchError((error: unknown) => {
-          super.handleRequestError(error);
-          return [];
-        })
-      );
+      .pipe(map((result) => result.items));
   }
 
   getWidgetItems(keyword: string) {

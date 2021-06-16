@@ -11,8 +11,9 @@ export const OPTIONS_CONFIG: Partial<NgxsConfig> = {
   /**
    * Run in development mode. This will add additional debugging features:
    * - Object.freeze on the state and actions to guarantee immutability
+   *
    */
-  developmentMode: !environment.production,
+  developmentMode: false,
 };
 
 export const DEVTOOLS_REDUX_CONFIG: NgxsDevtoolsOptions = {
