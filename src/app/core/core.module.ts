@@ -6,12 +6,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NgxsStoreModule } from '../store/store.module';
 import { NavWrapperComponent } from './components/layout/nav-wrapper/nav-wrapper.component';
 
 @NgModule({
   declarations: [NavWrapperComponent],
   imports: [
     CommonModule,
+    NgxsStoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
