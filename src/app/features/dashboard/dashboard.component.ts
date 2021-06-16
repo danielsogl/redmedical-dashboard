@@ -42,6 +42,9 @@ export class DashboardComponent implements OnInit {
     this.weatherData = this.loadWeatherData();
   }
 
+  /**
+   * Maps StackOverflowItems to WidgetItems based on a given search string
+   */
   private loadStackOverflowData(keyword: string) {
     const request = this.stackOverflowService.searchByKeyword(keyword);
     const mappedData = this.widgetService.mapDataToWidget(
@@ -51,18 +54,28 @@ export class DashboardComponent implements OnInit {
     return mappedData;
   }
 
+  /**
+   * Merges weather data and StackOverflow weather data items into one array.
+   * The array will contain the same amount of both item types
+   */
   private loadWeatherData() {
-    // fetch weather data
+    // weather request
     const weatherDataRequest = this.weatherService.weatherData();
+    // map weather data
     const weatherData = this.widgetService.mapDataToWidget(
       WeatherContentComponent,
       weatherDataRequest
     );
+
     // fetch stack overflow data
     const stackData = this.loadStackOverflowData('weather');
+
+    // combine both arrays
     const alternatedData = forkJoin([stackData, weatherData]).pipe(
+      // cut arrays to the same length based on the shortest array
       map((forkedResult) => cutToSameLength(forkedResult[0], forkedResult[1])),
-      // @ts-expect-error
+      // @ts-expect-error: types will not be resolved correctly by the IDE
+      // alternate both arrays into one array
       map((forkedResult) => alternateArrays(forkedResult[0], forkedResult[1]))
     );
     return alternatedData;

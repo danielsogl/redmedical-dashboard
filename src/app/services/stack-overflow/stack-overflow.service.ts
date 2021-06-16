@@ -21,6 +21,11 @@ export class StackOverflowService extends BaseHttpService {
     this.endpoint = environment.stackOverflowEndpoint;
   }
 
+  /**
+   * Returns a list of StackOverflow items.
+   *
+   * If a error happens a empty array will be returned
+   */
   searchByKeyword(keyword: string): Observable<StackOverflowItem[]> {
     // build url
     const url = `${this.endpoint}/search`;

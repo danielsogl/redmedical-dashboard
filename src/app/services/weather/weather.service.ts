@@ -19,6 +19,11 @@ export class WeatherService extends BaseHttpService {
     this.endpoint = environment.weatherEndpoint;
   }
 
+  /**
+   * Returns a list of weather items.
+   *
+   * If a error happens a empty array will be returned
+   */
   weatherData(): Observable<Weather[]> {
     return this.http.get<Weather[]>(this.endpoint).pipe(
       catchError((error: unknown) => {

@@ -1,5 +1,3 @@
-// Interfaces generated with https://app.quicktype.io/
-
 export interface StackOverflowSearchResult {
   items: StackOverflowItem[];
   has_more: boolean;

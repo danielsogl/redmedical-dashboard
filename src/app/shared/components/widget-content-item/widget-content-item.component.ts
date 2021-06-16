@@ -26,6 +26,10 @@ export class WidgetContentItemComponent<T, K> implements AfterContentInit {
     this.loadComponent();
   }
 
+  /**
+   * Resolves component via resolver factory and adds it to the dom
+   * by adding it to the contentHost ref
+   */
   private loadComponent() {
     // create component by given type
     const componentFactory = this.cfr.resolveComponentFactory(

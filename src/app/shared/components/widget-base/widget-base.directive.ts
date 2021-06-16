@@ -1,6 +1,10 @@
 import { Directive, Input } from '@angular/core';
 
-// because of ivy I had to use a directive with a selector
+/**
+ * Adds inputs to components via inheritance
+ *
+ * **Note:** since Ivy is used as view engine a selector musst be set
+ */
 @Directive({
   selector: '[appWidgetBase]',
 })
