@@ -19,8 +19,6 @@ describe('NavWrapperComponent', () => {
   });
 
   it('should render navbar title', () => {
-    expect(spectator.query('span')?.textContent).toEqual(
-      'Red Medical Dashboard'
-    );
+    expect(spectator.query('span')?.textContent).toEqual('Dynamic Dashboard');
   });
 });

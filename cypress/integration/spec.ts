@@ -1,7 +1,7 @@
 describe('Smoke Tests', () => {
   it('should visit the initial dashboard page', () => {
     cy.visit('/');
-    cy.contains('Red Medical Dashboard');
+    cy.contains('Dynamic Dashboard');
   });
 
   it('should redirect to dashboard page by default', () => {

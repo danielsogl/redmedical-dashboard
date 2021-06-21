@@ -1,5 +1,5 @@
 {
-  "name": "redmedical-dashboard",
+  "name": "dynamic-dashboard",
   "version": "1.1.0",
   "scripts": {
     "ng": "ng",
